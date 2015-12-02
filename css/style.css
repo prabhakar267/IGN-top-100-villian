@@ -49,3 +49,11 @@ body {
     color: #000;
     /*font-weight: 900;*/
 }
+
+.fork-github {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1200;
+	width: 180px;
+}

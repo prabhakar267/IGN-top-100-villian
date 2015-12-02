@@ -26,6 +26,10 @@
 </head>
 
 <body>
+    <a href="https://github.com/prabhakar267/IGN-top-100-villian" target="_blank">
+        <img src="img/right-dusk-blue%402x.png" class="fork-github visible-lg">
+    </a>
+
     <div class="head">
         <h2><strong>IGN Top 100 Villians</strong></h2>
         <br>
