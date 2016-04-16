@@ -1,9 +1,9 @@
 <?php
 	$connect_error = 'Could not connect';
-	$mysql_host = 'localhost';
-	$mysql_user = 'root';
-	$mysql_pass = '696163';
-	$mysql_data = 'top_villians_comics';
+	$mysql_host = 'XXXX';
+	$mysql_user = 'XXXX';
+	$mysql_pass = 'XXXX';
+	$mysql_data = 'XXXX';
 	
 	if(!$connection = mysqli_connect($mysql_host , $mysql_user , $mysql_pass, $mysql_data))
 		die(mysqli_error($connection));
