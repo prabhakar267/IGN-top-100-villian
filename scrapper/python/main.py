@@ -2,7 +2,7 @@
 # @Author: prabhakar
 # @Date:   2016-04-16 21:03:43
 # @Last Modified by:   Prabhakar Gupta
-# @Last Modified time: 2016-04-18 02:03:41
+# @Last Modified time: 2016-04-18 02:06:44
 
 import MySQLdb
 import requests
@@ -46,6 +46,9 @@ def fetch_data(website_url):
 				cur.execute(insert_query, villian_data)
 				break
 
+
+			# to leave strings with special characters
+			# from getting inserted into database
 			except UnicodeEncodeError:
 				insert_query = "INSERT INTO `data` (`rank`,`name`,`image`) VALUES (%s,%s,%s)"
 				villian_data = (villian_rank, villian_name, villian_image)
