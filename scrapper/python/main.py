@@ -2,7 +2,7 @@
 # @Author: prabhakar
 # @Date:   2016-04-16 21:03:43
 # @Last Modified by:   Prabhakar Gupta
-# @Last Modified time: 2016-04-18 01:55:06
+# @Last Modified time: 2016-04-18 02:03:41
 
 import MySQLdb
 import requests
@@ -11,6 +11,7 @@ from DBdetails import *
 
 conn = MySQLdb.connect(host=DB_HOST, user=DB_USER, passwd=DB_PASS, db=DB_NAME)
 cur = conn.cursor()
+
 
 def fetch_data(website_url):
 	page_number = 100
@@ -26,7 +27,6 @@ def fetch_data(website_url):
 
 		villian_name = str(villian_title_info[3].split('>')[1]).strip()
 		villian_rank = int(villian_title_info[1].split('>')[1].split('.')[0])
-		villian_link = str(villian_title_info[2].split('"')[1])
 		villian_image = soup.find('img')['src']
 
 
@@ -40,17 +40,17 @@ def fetch_data(website_url):
 
 		while True:
 			try:
-				query = "INSERT INTO `data_python` (`rank`,`name`,`description`,`image`) VALUES (%s,%s,%s,%s)"
-				data = (villian_rank, villian_name, villian_info, villian_image)
+				insert_query = "INSERT INTO `data` (`rank`,`name`,`description`,`image`) VALUES (%s,%s,%s,%s)"
+				villian_data = (villian_rank, villian_name, villian_info, villian_image)
 
-				cur.execute(query, data)
+				cur.execute(insert_query, villian_data)
 				break
 
 			except UnicodeEncodeError:
-				query = "INSERT INTO `data_python` (`rank`,`name`,`image`) VALUES (%s,%s,%s)"
-				data = (villian_rank, villian_name, villian_image)
+				insert_query = "INSERT INTO `data` (`rank`,`name`,`image`) VALUES (%s,%s,%s)"
+				villian_data = (villian_rank, villian_name, villian_image)
 
-				cur.execute(query, data)
+				cur.execute(insert_query, villian_data)
 				break			
 			
 			finally:
