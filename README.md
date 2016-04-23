@@ -5,6 +5,21 @@ Then display it in a list one-page format which was not present on IGN original 
 
 I basically built this scraper so that I could read about all the villians on a single page and I don't need to click on NEXT for every other villian (Yeah, I am lazy :sleepy:).
 
+## Instructions to Run Scrapper
++ Import MySQL dump file in your database
++ Add database and user credentials in respective files ([connection.inc.php](/scrapper/php/inc/connection.inc.php) for PHP and [DBdetails.py](/scrapper/python/DBdetails.py) for Python)
++ Run following instruction in your terminal
+
+For PHP
+```php
+  php /scrapper/php/fetch_data.php
+```
+
+For Python
+```python
+  python /scrapper/python/main.py
+```
+
 
 ## Screenshots
 **Top Frame**
